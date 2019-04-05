@@ -3,19 +3,16 @@
     "publishingInformation": {
       "locales": {
         "en-US": {
-          "summary": "Sample Short Description",
+          "summary": "An Alexa hack which enables the user to stream youtube music directly through Alexa without using any third party device.",
           "examplePhrases": [
-            "Alexa open hello world",
-            "hello",
-            "help"
+            "Alexa, open stream youtube"
           ],
           "name": "alexa-youtube",
-          "description": "Sample Full Description"
+          "description": "An Alexa hack which enables the ​user to stream youtube music directly through Alexa without using any third party device."
         }
       },
       "isAvailableWorldwide": true,
       "testingInstructions": "Sample Testing Instructions.",
-      "category": "KNOWLEDGE_AND_TRIVIA",
       "distributionCountries": []
     },
     "apis": {

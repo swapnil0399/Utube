@@ -1,27 +1,79 @@
 {
   "interactionModel": {
-    "languageModel": {
-      "invocationName": "hello world",
-      "intents": [
-        {
-          "name": "AMAZON.CancelIntent",
-          "samples": []
-        },
-        {
-          "name": "AMAZON.HelpIntent",
-          "samples": []
-        },
-        {
-          "name": "AMAZON.StopIntent",
-          "samples": []
-        },
-        {
-          "name": "HelloWorldIntent",
-          "samples": [
-            "hello"
-          ]
-        }
+      "languageModel": {
+          "invocationName": "stream youtube",
+          "intents": [
+              {
+                  "name": "AMAZON.CancelIntent",
+                  "samples": []
+              },
+              {
+                  "name": "AMAZON.HelpIntent",
+                  "samples": []
+              },
+              {
+                  "name": "AMAZON.StopIntent",
+                  "samples": []
+              },
+              {
+                  "name": "AMAZON.NavigateHomeIntent",
+                  "samples": []
+              },
+              {
+                  "name": "StreamYoutubeIntent",
+                  "slots": [
+                      {
+                          "name": "value",
+                          "type": "AMAZON.SearchQuery",
+                          "samples": [
+                              "PYT {value}",
+                              "Play {value} on Youtube",
+                              "{value}"
+                          ]
+                      }
+                  ],
+                  "samples": [
+                      "play {value}",
+                      "Can you play {value} on Youtube",
+                      "Let's hear {value} on Youtube",
+                      "PYT {value}",
+                      "Play {value} on Youtube"
+                  ]
+              }
+          ],
+          "types": []
+      },
+      "dialog": {
+          "intents": [
+              {
+                  "name": "StreamYoutubeIntent",
+                  "confirmationRequired": false,
+                  "prompts": {},
+                  "slots": [
+                      {
+                          "name": "value",
+                          "type": "AMAZON.SearchQuery",
+                          "confirmationRequired": false,
+                          "elicitationRequired": true,
+                          "prompts": {
+                              "elicitation": "Elicit.Slot.116116506338.335716513732"
+                          }
+                      }
+                  ]
+              }
+          ],
+          "delegationStrategy": "ALWAYS"
+      },
+      "prompts": [
+          {
+              "id": "Elicit.Slot.116116506338.335716513732",
+              "variations": [
+                  {
+                      "type": "PlainText",
+                      "value": "What do you want me to play on YOUTUBE?"
+                  }
+              ]
+          }
       ]
-    }
   }
 }
